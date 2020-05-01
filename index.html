@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+
+<body onload="configureSIR();">
+
+    <div class="container-fluid content">
+        <div class="row content">
+            <div class="col-3 right-border content align-right">
+                <div class="TOB">
+                    <h2>Table of Contents</h2>
+                    <ul>
+                        <li class="TOB-li"><a href="#introduction" class="TOB-a" style="text-decoration: none;">Introduction</a></li>
+                        <li class="TOB-li"><a href="#SIR" class="TOB-a" style="text-decoration: none;">SIR</a></li>
+                        <li class="TOB-li"><a href="google.com" class="TOB-a" style="text-decoration: none;">Other shit</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-9 content">
+                <div id="introduction">
+                    <h2>Introduction</h2>
+                    <hr>
+                    <p>COVID-19 is a disease caused by the SARS-CoV-2. It is a highly infectious disease, spreading by coughing, talking, or by touching an infected surface. The disease is currently classified as a pandemic, with cases on all continents,
+                        except Antartica.</p>
+                    <h3>For more information, do not use this website. Go to: <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">https://www.cdc.gov/coronavirus/2019-ncov/index.html</a></h3>
+                    <p>I am not a medical doctor, but I am a programmer. So I feel the best thing I can do is make simple simulations.</p>
+                </div>
+                <hr>
+                <div id="modeling">
+                    <h2>Modeling a Pandemic</h2>
+                    <hr>
+                    <p>I have a lot a free time currently, so I have coded up a few simple simulations for pandemics. There are many ways to simulate a pandemic, each having their pros and cons.</p>
+                </div>
+                <hr>
+                <div class="SIR" id="SIR">
+                    <div class="header">
+                        <h1>SIR Model</h1>
+                    </div>
+                    <hr class="rounded">
+                    <div id="SIR">
+                        <canvas id="SIR-configurable-grid"></canvas>
+                        <canvas id="SIR-configurable-labels"></canvas>
+                        <canvas id="SIR-configurable"></canvas>
+                        <canvas id="SIR-configurable-overlay"></canvas>
+                    </div><br>
+                    <table class="table table-striped">
+                        <tr>
+                            <th><label for="SIR-infectivity">Infectivity: </label></th>
+                            <td><label id="SIR-configurable-infectivity-value-display"></label></td>
+                            <td><input name="SIR-infectivity" id="SIR-configurable-infectivity" type="range" value="2" placeholder="Infectivity" step="0.1" min="0" max="10"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="SIR-recovery">Recovery Rate: </label></th>
+                            <td><label id="SIR-configurable-recovery-value-display"></label></td>
+                            <td><input name="SIR-recovery" id="SIR-configurable-recovery" type="range" value="0.1" placeholder="Recovery Rate" step="0.1" min="0" max="10"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="SIR-start">Start Infected:</label></th>
+                            <td><label id="SIR-configurable-start-value-display"></label></td>
+                            <td><input name="SIR-start" id="SIR-configurable-start" type="range" value="0.01" placeholder="Start Infected" step="0.01" min="0" max="1"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="SIR-time">Time Scale: </label></th>
+                            <td><label id="SIR-configurable-time-value-display"></label></td>
+                            <td><input name="SIR-time" id="SIR-configurable-time" type="range" min="0.1" max="100"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!--
+    <div class="header">
+        <h1>SIR Model</h1>
+    </div>
+    <hr class="rounded">
+    <div id="SIR">
+        <canvas id="SIR-configurable"></canvas>
+        <canvas id="SIR-configurable-grid"></canvas>
+        <canvas id="SIR-configurable-overlay"></canvas>
+    </div><br>
+    <label for="SIR-infectivity">Infectivity: </label>
+    <input name="SIR-infectivity" id="SIR-configurable-infectivity" type="range" value="2" placeholder="Infectivity" step="0.1" min="0" max="10"><br>
+    <label for="SIR-recovery">Recovery Rate: </label>
+    <input name="SIR-recovery" id="SIR-configurable-recovery" type="range" value="0.1" placeholder="Recovery Rate" step="0.1" min="0" max="10"><br>
+    <label for="SIR-start">Start Infected:</label>
+    <input name="SIR-start" id="SIR-configurable-start" type="range" value="0.01" placeholder="Start Infected" step="0.01" min="0" max="1"><br>
+    <label for="SIR-time">Time Scale: </label>
+    <input name="SIR-time" id="SIR-configurable-time" type="range" min="1" max="100"><br>
+</body>
+-->
