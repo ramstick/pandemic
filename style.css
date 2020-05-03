@@ -4,11 +4,11 @@ body {
     padding: 20px;
 }
 
-#SIR {
+.layered-canvas-wrapper {
     display: grid;
 }
 
-canvas {
+.layered-canvas {
     grid-row: 1;
     grid-column: 1;
 }
@@ -72,6 +72,7 @@ hr.rounded {
 
 .TOB {
     position: fixed;
+    text-align: right;
 }
 
 .TOB ul {
@@ -102,4 +103,12 @@ hr.rounded {
 
 .input-block {
     margin: 20px;
+}
+
+canvas {
+    margin: 20px;
+}
+
+strong {
+    font-weight: 700;
 }
